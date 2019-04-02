@@ -171,8 +171,8 @@
      
   </div>
   
-  <div class="container del2">
-      <div class="row justify-content-md-center">
+  <div class="container del2" ng-app="boxapp" ng-controller="boxcontroller">
+      <div class="row justify-content-md-center"  >
           <div class="col-md-12">
               <div class="row">
                   <div class="col-md-3">
@@ -189,30 +189,30 @@
 
                   </div>
                   <div class="col-md-4 color" id="show">
-                      showing 1-12 of 30 results
+                    <div>
+                      Visa antal produkter 
+                      <select style="border-radius: 25px;" ng-model="rowLimits">
+                          <option value="1" >1</option>
+                          <option value="4 selected">4</option>
+                          <option value="6">6</option>
+                          <option value="10">10</option>
+                      </select>
+                  </div>
                   </div>
                   <div class="col-md-2">
                       <div class="dropdown color " id="sortby">
-                        <div>
-                            <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown" style="font-size: 15px;margin-top: -4px;color: #99a4aa;">sortby
-                                <span class="caret"></span></button>
-                        </div>
-                        <div>
-                            <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">HTML</a></li>
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">CSS</a></li>
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">JavaScript</a></li>
-                                <li role="presentation" class="divider"></li>
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">About Us</a></li>
-                            </ul>
-                        </div>
+                        <select class="sec" ng-model="sortColumn">
+                          <option value="category">Kategori</option>
+                          <option value="price">Pris</option>
+                          <option value="instockdate">rating</option>
+                      </select>
                       </div>
 
                   </div>
                   <div class="col-md-3">
                       <div class="row search">
                           <div class="col-md-8 ">
-                              <input type="search" name="search" id="sea" placeholder="search from here ..">
+                              <input type="search" name="search" id="sea" ng-model="search" placeholder="search from here ..">
                           </div>
                           <div class="col-md-4" id="searchicon">
                               <i class="fa fa-search"></i>
@@ -225,15 +225,15 @@
           </div>
 
       </div>
-      <div ng-app="boxapp">
-          <div ng-controller="boxcontroller">
+      <div >
+          <div>
               <div class="col-mg-12">
                   <div class="card-deck boxses" style="margin-top:39px;">
-                      <div class="col-md-4 mb-4" ng-repeat="box in boxes">
+                      <div class="col-md-4 mb-4" ng-repeat="box in boxes  | orderBy:sortColumn | filter: search | limitTo:rowLimits">
                           <div class="card" style="border: none;">
                               <img class="card-img-top boximg" src="{{box.img}}" alt="">
                               <div class="card-body" style="height: 81px;">
-                                  <strong class="card-title boxtitle">{{box.title}}</strong>
+                                  <strong class="card-title boxtitle">{{box.Kategori}}</strong>
                                   <br>
                                   <div class="row" style="margin-top:10px;">
                                          <div class="col-sm-9">
@@ -241,8 +241,9 @@
                      
                                          </div>
                                          <div class="col-sm-3" style="display : flex;">
-                                          <span  ng-repeat=" star in box.rating " class="stars"><i class="fas fa-star">{{star.j}}</i></span>
-                     
+                                            <div class="stars-outer">
+                                                <div class="stars-inner" ng-style="{ 'width': rating(box.rating) }"></div>
+                                            </div>
                                          </div>
                                   </div>
                               </div>
