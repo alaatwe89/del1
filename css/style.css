@@ -257,6 +257,7 @@ padding: 10px;
     position: relative;
     display: inline-block;
     font-size: 12px;
+    margin-left: -21px;
 }
 
 .stars-inner {
@@ -289,7 +290,8 @@ padding: 10px;
 }
 
 .nummber ul{
-    list-style: none;
+    
+    -style: none;
  
   
     

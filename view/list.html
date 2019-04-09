@@ -1,0 +1,19 @@
+<div class="container-fluid"  ng-repeat="box in boxes  |  orderBy:sortColumn | filter: search | limitTo:rowLimits">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="row" style=" margin-top: 56px; border: 1px solid #99a5ad;">
+				<div class="col-md-6">
+                                      <img class="card-img-top" src="{{box.img}}" alt="" style="width: 216px;height: 173px;  margin-left: -16px;">
+   
+				</div>
+				<div class="col-md-6">
+                                        <div class="card-body" style="height: 81px;">
+                                            <strong class="card-title boxtitle">{{box.category}}</strong>
+                                               <p class="card-text boxprice"> {{box. price}}</p>
+                                          <div class="stars-outer">
+                                              <div class="stars-inner" ng-style="{ 'width': rating(box.rating) }"></div>
+                                           </div>
+                                        </div>
+				</div>
+                        </div>
+                        
