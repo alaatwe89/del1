@@ -1,0 +1,10 @@
+{
+    "env": {
+        "SERVER_HOST": "localhost",
+        "SERVER_PORT": 8888,
+
+        "MONGODB": "mongodb://localhost:27017/lektion9",
+        "PRIVATE_SECRET_KEY": "ecutbildning"
+
+    }
+}
