@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="col-mg-12">
+        <div class="card-deck boxses" style="margin-top:39px;">
+        
+            <div class="col-md-4 mb-4" ng-repeat="box in boxes  |  orderBy:sortColumn | filter: search | limitTo:rowLimits">
+                <div class="card" style="border: none; margin-bottom: 28px;">
+                    <img class="card-img-top boximg" src="{{box.img}}" alt="">
+                    <div class="card-body" style="height: 81px;">
+                        <strong class="card-title boxtitle">{{box.category }}</strong>
+                       
+                        <br>
+                        <div class="row" style="margin-top:10px;">
+                               <div class="col-sm-9">
+                                <p class="card-text boxprice"> ${{box.price }}</p>
+           
+                               </div>
+                               <div class="col-sm-3" style="display : flex;">
+                                  <div class="stars-outer">
+                                      <div class="stars-inner" ng-style="{ 'width': rating(box.rating) }"></div>
+                                  </div>
+                               </div>
+                               
+                        </div>
+                        <button type="button" class="btn btn-primary btn-sm" style="    width: 251px;
+                        margin-top: 8px;
+                        margin-left: -22px;"  ng-click="addItem(box)">Add to card</button>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
