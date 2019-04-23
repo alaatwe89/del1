@@ -32,7 +32,7 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Shopping</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -42,13 +42,12 @@
           <p>{{ emptycart }}</p>
           <table> 
               <tr ng-repeat="box in cart">
-                  <td> {{ box.category }}</td>
+                  <td>{{box.quantity}} x {{ box.category }}</td>
                   <td>{{getProductCost(box)}} :-</td>
-                  <td><button class="btn btn-link remove-item " ng-click="removeItem(box)"><i class="fa fa-trash-alt"></i></button></td>
+                  <td><button class="btn btn-link remove-item " ng-click="removeItem(box)"><i class="fas fa-trash-alt"></i></button></td>
               </tr>
           </table>
           <h4 class="mt-2">Total: {{ getTotal() }} SEK</h4>
-
 
         </div>
         <div class="modal-footer">
@@ -89,15 +88,15 @@
               <li><i class="far fa-envelope"></i></li>
               <li>info@webmail.com</li>
               <li>
-                <a href="#!login" style="font-size: 10px; padding-left: 37px; cursor: pointer;">Login</a>
+                <a href="#!login" style="font-size: 15px; padding-left: 37px; cursor: pointer;">Login</a>
 
 
               </li>
               <li>
-                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                      cart
-                    </button>
+                <a href="" data-toggle="modal" data-target="#exampleModal"> <i class="fas fa-shopping-cart" style="font-size: 19px;"></i><span class="badge badge-pill" ng-class="badgeColor" style="font-size:12px; font-weight:normal; position: absolute; top:-6px; right: 2px;">{{ getQuantity() }}</span>
+                </a>
               </li>
+            
 
 
 
