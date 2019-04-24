@@ -16,7 +16,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.7/angular-route.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.7/angular-cookies.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js"></script>
-  
+
   <script src="js/script.js"></script>
   <script src="services/auth.service.js"></script>
   <script src="services/dialog.service.js"></script>
@@ -27,8 +27,9 @@
 
 <body>
 
-  <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <!-- Modal för kund vagen -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -38,14 +39,15 @@
           </button>
         </div>
         <div class="modal-body">
-          
+
           <p>{{ emptycart }}</p>
-          <table> 
-              <tr ng-repeat="box in cart">
-                  <td>{{box.quantity}} x {{ box.category }}</td>
-                  <td>{{getProductCost(box)}} :-</td>
-                  <td><button class="btn btn-link remove-item " ng-click="removeItem(box)"><i class="fas fa-trash-alt"></i></button></td>
-              </tr>
+          <table>
+            <tr ng-repeat="box in cart">
+              <td>{{box.quantity}} x {{ box.category }}</td>
+              <td>{{getProductCost(box)}} :-</td>
+              <td><button class="btn btn-link remove-item " ng-click="removeItem(box)"><i
+                    class="fas fa-trash-alt"></i></button></td>
+            </tr>
           </table>
           <h4 class="mt-2">Total: {{ getTotal() }} SEK</h4>
 
@@ -57,6 +59,9 @@
       </div>
     </div>
   </div>
+
+
+
   <header>
     <div class="h11">
       <div class="container">
@@ -88,15 +93,18 @@
               <li><i class="far fa-envelope"></i></li>
               <li>info@webmail.com</li>
               <li>
-                <a href="#!login" style="font-size: 15px; padding-left: 37px; cursor: pointer;">Login</a>
+
+                <a href="login.html" style="font-size: 15px; padding-left: 37px; cursor: pointer;">Login</a>
 
 
               </li>
               <li>
-                <a href="" data-toggle="modal" data-target="#exampleModal"> <i class="fas fa-shopping-cart" style="font-size: 19px;"></i><span class="badge badge-pill" ng-class="badgeColor" style="font-size:12px; font-weight:normal; position: absolute; top:-6px; right: 2px;">{{ getQuantity() }}</span>
+                <a href="" data-toggle="modal" data-target="#exampleModal"> <i class="fas fa-shopping-cart"
+                    style="font-size: 19px;"></i><span class="badge badge-pill" ng-class="badgeColor"
+                    style="font-size:12px; font-weight:normal; position: absolute; top:-6px; right: 2px;">{{ getQuantity() }}</span>
                 </a>
               </li>
-            
+
 
 
 
@@ -206,7 +214,7 @@
       <div class="col col-lg-3">
         <div class="row">
           <div class="col-md-2 icon ">
-            
+
           </div>
 
           <div class="col-md-10">
@@ -321,7 +329,9 @@
     <div ng-view>
 
     </div>
-    <div class="container nummber">
+
+
+     <div class="container nummber">
       <ul>
         <li id="icon1"><i class="fas fa-arrow-left"></i></li>
         <li>01</li>
@@ -355,7 +365,8 @@
                 </div>
               </div>
               <p style="font-size: 12px;margin-top: 10px;">
-                Lorem ipsum dolor sit amet. Aliquam eget sapien sapien. Curabitur in metus urna. In hac habitasse platea
+                Lorem ipsum dolor sit amet. Aliquam eget sapien sapien. Curabitur in metus urna. In hac habitasse
+                platea
                 dictumst. Phasellus eu sem sapienssssssssssssssssssssssssss
               </p>
               <div class="footericon">

@@ -1,7 +1,7 @@
 (function() {
 
     angular
-        .module("boxapp")
+        .module("loginApp")
         .factory("authService", authService);
 
     authService.$inject = ['$http', "$cookies", "$rootScope", "$timeout", "userService"];

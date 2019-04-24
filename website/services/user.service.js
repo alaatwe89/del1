@@ -1,7 +1,7 @@
 (function () {
 
     angular
-        .module("boxapp")
+        .module("loginApp")
         .factory("userService", userService);
 
     userService.$inject = ["$http", "$rootScope"];

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="loginApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AngularJS Demo</title>
+    
+    <!-- CSS Styling -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/custom.css">
+
+</head>
+<body>
+
+    <div class="container mt-5">
+        <div    ng-class="{ 'alert': dialog, 'alert-success': dialog.type === 'success', 'alert-danger': dialog.type === 'error' }" 
+                ng-if="dialog" 
+                ng-bind="dialog.message">
+        </div>
+        <div ng-view></div>
+    </div>
+
+
+    <!-- Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    
+    <!-- Angular JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.7/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.7/angular-route.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.7/angular-cookies.min.js"></script>    
+    
+    <script src="app.js"></script>
+    <script src="services/dialog.service.js"></script>
+    <script src="services/user.service.js"></script>
+    <script src="services/auth.service.js"></script>
+    
+    <script src="partials/home/home.controller.js"></script>
+    <script src="partials/login/login.controller.js"></script>
+    <script src="partials/register/register.controller.js"></script>
+    
+</body>
+</html>

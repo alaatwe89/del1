@@ -1,7 +1,7 @@
 (function () {
 
     angular
-        .module("boxapp")
+        .module("loginApp")
         .factory("dialogService", dialogService)
 
     dialogService.$inject = ["$rootScope"];
